@@ -9,10 +9,11 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.1"
+    s.version      = "0.0.2"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
-                        ZL_CategarySwift AA
+                        常用的swift分类
+                        ZL_CategarySwift
                    DESC
     s.homepage     = "https://github.com/WhityLL/ZL_CategarySwift"
     s.license      = "MIT"
@@ -30,7 +31,7 @@ Pod::Spec.new do |s|
 
 
     # ——— File patterns
-    s.source_files  = "ZL_CategarySwift/Classes/**/*"
+    # s.source_files  = "ZL_CategarySwift/Classes/**/*"
 
 
     # 1 Macros
