@@ -8,48 +8,49 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "ZL_CategarySwift"
-  s.version      = "0.0.2"
-  s.summary      = "ZL_CategarySwift"
-  s.description  = <<-DESC
+    s.name         = "ZL_CategarySwift"
+    s.version      = "0.0.3"
+    s.summary      = "ZL_CategarySwift"
+    s.description  = <<-DESC
                         ZL_CategarySwift
                    DESC
-  s.homepage     = "https://github.com/WhityLL/ZL_CategarySwift"
-  s.license      = "MIT"
-  s.author             = { "Whity" => "liulei10luojia@163.com" }
+    s.homepage     = "https://github.com/WhityLL/ZL_CategarySwift"
+    s.license      = "MIT"
+    s.author             = { "Whity" => "liulei10luojia@163.com" }
 
-  # ――― Platform
-  s.platform = :ios
-  s.ios.deployment_target = '9.0'
+    # ――― Platform
+    s.platform = :ios
+    s.ios.deployment_target = '9.0'
   
-  # ――― Build settings
-  s.requires_arc = true
-  s.swift_version = '5.0'
+    # ――― Build settings
+    s.requires_arc = true
+    s.swift_version = '5.0'
 
-  s.source  = { :git => "https://github.com/WhityLL/ZL_CategarySwift.git", :tag => "#{s.version}" }
+    s.source  = { :git => "https://github.com/WhityLL/ZL_CategarySwift.git", :tag => "#{s.version}" }
 
 
-  # ——— File patterns
-  s.source_files  = "ZL_CategarySwift/Classes/**/*"
+    # ——— File patterns
+    s.source_files  = "ZL_CategarySwift/Classes/**/*"
 
-  # 1 ConmonUtils
-  s.subspec 'ConmonUtils' do |conmonUtils|
-    conmonUtils.source_files = "ZL_CategarySwift/Classes/ConmonUtils/*"
-    conmonUtils.framework = 'CoreTelephony'
-  end
+    # 1 Extension
+        s.subspec 'Extension' do |extension|
+        extension.source_files = "ZL_CategarySwift/Classes/Extension/*"
+        extension.dependency "MBProgressHUD"
+        extension.dependency "Kingfisher", "~>4.10.1"
+    end
+
+    # 2 ConmonUtils
+    s.subspec 'ConmonUtils' do |conmonUtils|
+        conmonUtils.source_files = "ZL_CategarySwift/Classes/ConmonUtils/*"
+        conmonUtils.framework = 'CoreTelephony'
+        conmonUtils.dependency 'ZL_CategarySwift/Classes/Extension'
+    end
   
-  # 2 Extension
-  s.subspec 'Extension' do |extension|
-    extension.source_files = "ZL_CategarySwift/Classes/Extension/*"
-    extension.dependency "MBProgressHUD"
-    extension.dependency "Kingfisher", "~>4.10.1"
-  end
+    # 3 Macros
+    s.subspec 'Macros' do |macros|
+        macros.source_files = "ZL_CategarySwift/Classes/Macros/*"
+    end
   
-  # 2 Macros
-  s.subspec 'Macros' do |macros|
-    macros.source_files = "ZL_CategarySwift/Classes/Macros/*"
-  end
-  
-  s.framework = 'QuartzCore', 'CoreText'  , 'CoreGraphics', 'UIKit', 'Foundation', 'CFNetwork', 'CoreMotion'
-  s.library = 'c++', 'z',"sqlite3.0"
+    s.framework = 'QuartzCore', 'CoreText'  , 'CoreGraphics', 'UIKit', 'Foundation', 'CFNetwork', 'CoreMotion'
+    s.library = 'c++', 'z',"sqlite3.0"
 end
