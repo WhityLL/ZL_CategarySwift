@@ -76,6 +76,7 @@ Pod::Spec.new do |s|
         
         funcs.subspec 'Health' do |ss|
            ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/Health/*"
+           ss.dependency 'ZL_CategarySwift/ConmonUtils'
         end
         
         funcs.subspec 'PhotoKit' do |ss|
