@@ -100,3 +100,13 @@ extension PhotoKitManager: UIImagePickerControllerDelegate, UINavigationControll
         
     }
 }
+
+extension PhotoKitManager: TZImagePickerControllerDelegate{
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingGifImage animatedImage: UIImage!, sourceAssets asset: PHAsset!) {
+           
+       }
+       
+    func tz_imagePickerControllerDidCancel(_ picker: TZImagePickerController!) {
+           
+    }
+}
