@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.5"
+    s.version      = "0.0.6"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
                         ZL_CategarySwift AA
@@ -32,11 +32,10 @@ Pod::Spec.new do |s|
     # ——— File patterns
     s.source_files  = "ZL_CategarySwift/Classes/**/*"
 
-    # 1 ConmonUtils
-    s.subspec 'ConmonUtils' do |conmonUtils|
-        conmonUtils.source_files = "ZL_CategarySwift/Classes/ConmonUtils/*"
-        conmonUtils.framework = 'CoreTelephony'
-        conmonUtils.dependency 'ZL_CategarySwift/Classes/Extension'
+
+    # 1 Macros
+    s.subspec 'Macros' do |macros|
+        macros.source_files = "ZL_CategarySwift/Classes/Macros/*"
     end
 
     # 2 Extension
@@ -45,12 +44,14 @@ Pod::Spec.new do |s|
         extension.dependency "MBProgressHUD"
         extension.dependency "Kingfisher", "~>4.10.1"
     end
-
     
-  
-    # 3 Macros
-    s.subspec 'Macros' do |macros|
-        macros.source_files = "ZL_CategarySwift/Classes/Macros/*"
+
+    # 3 ConmonUtils
+    s.subspec 'ConmonUtils' do |conmonUtils|
+        conmonUtils.dependency 'ZL_CategarySwift/Classes/Extension'
+        conmonUtils.framework = 'CoreTelephony'
+        
+        conmonUtils.source_files = "ZL_CategarySwift/Classes/ConmonUtils/*"
     end
   
     s.framework = 'QuartzCore', 'CoreText'  , 'CoreGraphics', 'UIKit', 'Foundation', 'CFNetwork', 'CoreMotion'
