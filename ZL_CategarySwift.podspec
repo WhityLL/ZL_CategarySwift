@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.4"
+    s.version      = "0.0.5"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
                         ZL_CategarySwift AA
@@ -32,19 +32,21 @@ Pod::Spec.new do |s|
     # ——— File patterns
     s.source_files  = "ZL_CategarySwift/Classes/**/*"
 
-    # 1 Extension
+    # 1 ConmonUtils
+    s.subspec 'ConmonUtils' do |conmonUtils|
+        conmonUtils.source_files = "ZL_CategarySwift/Classes/ConmonUtils/*"
+        conmonUtils.framework = 'CoreTelephony'
+        conmonUtils.dependency 'ZL_CategarySwift/Classes/Extension'
+    end
+
+    # 2 Extension
     s.subspec 'Extension' do |extension|
         extension.source_files = "ZL_CategarySwift/Classes/Extension/*"
         extension.dependency "MBProgressHUD"
         extension.dependency "Kingfisher", "~>4.10.1"
     end
 
-    # 2 ConmonUtils
-    s.subspec 'ConmonUtils' do |conmonUtils|
-        conmonUtils.source_files = "ZL_CategarySwift/Classes/ConmonUtils/*"
-        conmonUtils.framework = 'CoreTelephony'
-        conmonUtils.dependency 'ZL_CategarySwift/Classes/Extension'
-    end
+    
   
     # 3 Macros
     s.subspec 'Macros' do |macros|
