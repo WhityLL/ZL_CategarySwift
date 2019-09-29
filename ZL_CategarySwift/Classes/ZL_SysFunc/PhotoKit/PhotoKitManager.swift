@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TZImagePickerController
 
 typealias PhotoKitClosure = (_ img: UIImage) -> ()
 
