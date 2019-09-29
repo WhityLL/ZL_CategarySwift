@@ -58,6 +58,7 @@ Pod::Spec.new do |s|
     s.subspec 'Base' do |base|
         base.subspec 'ZLPopOverVC' do |ss|
            ss.source_files = "ZL_CategarySwift/Classes/Base/ZLPopOverVC/*"
+           ss.dependency 'ZL_CategarySwift/Macros'
         end
     end
     
