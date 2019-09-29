@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.4"
+    s.version      = "0.0.5"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
                         常用的swift分类
@@ -65,11 +65,11 @@ Pod::Spec.new do |s|
     s.subspec 'ZL_SysFunc' do |funcs|
         funcs.subspec 'AddressBook' do |ss|
            ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/AddressBook/*"
-           conmonUtils.dependency 'ZL_CategarySwift/ConmonUtils'
+           ss.dependency 'ZL_CategarySwift/ConmonUtils'
         end
         funcs.subspec 'Location' do |ss|
            ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/Location/*"
-           conmonUtils.dependency 'ZL_CategarySwift/ConmonUtils'
+           ss.dependency 'ZL_CategarySwift/ConmonUtils'
         end
     end
     
