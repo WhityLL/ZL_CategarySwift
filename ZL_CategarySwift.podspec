@@ -56,18 +56,18 @@ Pod::Spec.new do |s|
     
     #  Base
     s.subspec 'Base' do |base|
-        base.subspec 'ZLPopOverVC' do 'ss'
+        base.subspec 'ZLPopOverVC' do |ss|
            ss.source_files = "ZL_CategarySwift/Classes/Base/ZLPopOverVC/*"
         end
     end
     
     #  ZL_SysFunc
     s.subspec 'ZL_SysFunc' do |funcs|
-        funcs.subspec 'AddressBook' do 'ss'
+        funcs.subspec 'AddressBook' do |ss|
            ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/AddressBook/*"
            conmonUtils.dependency 'ZL_CategarySwift/ConmonUtils'
         end
-        funcs.subspec 'Location' do 'ss'
+        funcs.subspec 'Location' do |ss|
            ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/Location/*"
            conmonUtils.dependency 'ZL_CategarySwift/ConmonUtils'
         end
