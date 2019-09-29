@@ -52,12 +52,12 @@ extension ZLBasePopVC : UIViewControllerTransitioningDelegate{
             config = self.presentAnimationModelConfig
         }else{
             config = ZLAnimationConfig()
-            config.animationDuration = CGFloat(animationDuration);
-            config.modelType = .ZLAnimationModelTypePresent
-            config.alpha_bgBiew = 0.6
-            config.viewHeight = self.view.frame.size.height
+            config?.animationDuration = CGFloat(animationDuration);
+            config?.modelType = .ZLAnimationModelTypePresent
+            config?.alpha_bgBiew = 0.6
+            config?.viewHeight = self.view.frame.size.height
         }
-        return ZLAnimationModel.animationModelWithAnimationConfig(config: config)
+        return ZLAnimationModel.animationModelWithAnimationConfig(config: config!)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -66,12 +66,12 @@ extension ZLBasePopVC : UIViewControllerTransitioningDelegate{
             config = self.dismissAnimationModelConfig
         }else{
             config = ZLAnimationConfig()
-            config.animationDuration = CGFloat(animationDuration);
-            config.modelType = .ZLAnimationModelTypeDismiss;
-            config.alpha_bgBiew = 0.6;
-            config.viewHeight = self.view.frame.size.height;
+            config?.animationDuration = CGFloat(animationDuration);
+            config?.modelType = .ZLAnimationModelTypeDismiss;
+            config?.alpha_bgBiew = 0.6;
+            config?.viewHeight = self.view.frame.size.height;
         }
-        return ZLAnimationModel.animationModelWithAnimationConfig(config: config)
+        return ZLAnimationModel.animationModelWithAnimationConfig(config: config!)
 
     }
     
