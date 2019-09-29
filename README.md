@@ -15,9 +15,15 @@ swift 项目常用分类
 
 3.用编辑器打开.podspec文件,我用的Xcode打开的.
 4.为源代码添加对应的Tag;
-git tag '0.0.1' //版本号 git push --tags //提交标签
+git tag '0.0.1'  //版本号 
+git push --tags //提交标签
 
 5.验证podspec文件:
-pod spec lint #项目名字#.podspec --verbose 注意: 任何的警告、错误都是不能被添加到Spec Repo中
+
+pod spec lint ZL_CategarySwift.podspec --verbose --allow-warnings
+
+pod spec lint #项目名字#.podspec --verbose 注意:
+任何的警告、错误都是不能被添加到Spec Repo中
 
 6. 通过Trunk推送给Cocoapods服务器:
+pod trunk push ZL_CategarySwift.podspec --allow-warnings
