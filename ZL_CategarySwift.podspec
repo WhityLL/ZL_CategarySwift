@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.6"
+    s.version      = "0.0.7"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
                         常用的swift分类
@@ -68,9 +68,20 @@ Pod::Spec.new do |s|
            ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/AddressBook/*"
            ss.dependency 'ZL_CategarySwift/ConmonUtils'
         end
+        
         funcs.subspec 'Location' do |ss|
            ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/Location/*"
            ss.dependency 'ZL_CategarySwift/ConmonUtils'
+        end
+        
+        funcs.subspec 'Health' do |ss|
+           ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/Health/*"
+        end
+        
+        funcs.subspec 'PhotoKit' do |ss|
+           ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/PhotoKit/*"
+           ss.dependency 'ZL_CategarySwift/Macros'
+           ss.dependency 'TZImagePickerController'
         end
     end
     
