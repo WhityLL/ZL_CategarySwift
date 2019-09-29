@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.6"
+    s.version      = "0.0.7"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
                         ZL_CategarySwift AA
@@ -48,10 +48,9 @@ Pod::Spec.new do |s|
 
     # 3 ConmonUtils
     s.subspec 'ConmonUtils' do |conmonUtils|
-        conmonUtils.dependency 'ZL_CategarySwift/Classes/Extension'
-        conmonUtils.framework = 'CoreTelephony'
-        
         conmonUtils.source_files = "ZL_CategarySwift/Classes/ConmonUtils/*"
+        conmonUtils.dependency 'ZL_CategarySwift/Extension'
+        conmonUtils.framework = 'CoreTelephony'
     end
   
     s.framework = 'QuartzCore', 'CoreText'  , 'CoreGraphics', 'UIKit', 'Foundation', 'CFNetwork', 'CoreMotion'
