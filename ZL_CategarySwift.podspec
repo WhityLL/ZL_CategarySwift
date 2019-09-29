@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.7"
+    s.version      = "0.0.1"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
                         ZL_CategarySwift AA
@@ -47,6 +47,7 @@ Pod::Spec.new do |s|
     
 
     # 3 ConmonUtils
+    # 并且要添加依赖（注意写法）'ZL_CategarySwift/Extension'
     s.subspec 'ConmonUtils' do |conmonUtils|
         conmonUtils.source_files = "ZL_CategarySwift/Classes/ConmonUtils/*"
         conmonUtils.dependency 'ZL_CategarySwift/Extension'
