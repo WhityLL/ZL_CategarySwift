@@ -99,7 +99,3 @@ extension PhotoKitManager: UIImagePickerControllerDelegate, UINavigationControll
         
     }
 }
-
-extension PhotoKitManager: TZImagePickerControllerDelegate{
-    
-}

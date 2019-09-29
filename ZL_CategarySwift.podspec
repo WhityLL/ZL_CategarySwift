@@ -80,6 +80,7 @@ Pod::Spec.new do |s|
         
         funcs.subspec 'PhotoKit' do |ss|
            ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/PhotoKit/*"
+           ss.dependency 'ZL_CategarySwift/ConmonUtils'
            ss.dependency 'ZL_CategarySwift/Macros'
            ss.dependency 'TZImagePickerController'
         end
