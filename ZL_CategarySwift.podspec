@@ -9,10 +9,10 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.3"
+    s.version      = "0.0.4"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
-                        ZL_CategarySwift
+                        ZL_CategarySwift AA
                    DESC
     s.homepage     = "https://github.com/WhityLL/ZL_CategarySwift"
     s.license      = "MIT"
@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
     s.source_files  = "ZL_CategarySwift/Classes/**/*"
 
     # 1 Extension
-        s.subspec 'Extension' do |extension|
+    s.subspec 'Extension' do |extension|
         extension.source_files = "ZL_CategarySwift/Classes/Extension/*"
         extension.dependency "MBProgressHUD"
         extension.dependency "Kingfisher", "~>4.10.1"
