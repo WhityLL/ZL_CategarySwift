@@ -11,7 +11,7 @@ import UIKit
 
 public extension UIImage {
     
-    public static func from(color: UIColor) -> UIImage {
+    static func from(color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
@@ -88,7 +88,7 @@ public extension UIImage {
     ///   - image: compressImage
     ///   - maxLength: maxLength
     /// - Returns: return image
-    public static func compressImageQuality(_ image: UIImage, toByte maxLength: Int) -> UIImage {
+    static func compressImageQuality(_ image: UIImage, toByte maxLength: Int) -> UIImage {
         var compression: CGFloat = 1
         guard var data = image.jpegData(compressionQuality: compression),
             data.count > maxLength else { return image }

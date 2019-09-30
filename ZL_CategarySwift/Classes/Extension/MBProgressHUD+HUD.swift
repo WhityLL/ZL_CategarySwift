@@ -14,7 +14,7 @@ public extension MBProgressHUD {
     
    // MARK: - ====== Toast ======
     
-    public static func showBusy(message: String){
+    static func showBusy(message: String){
         MBProgressHUD .showMessage(message: message, mode: .indeterminate)
     }
     
@@ -25,7 +25,7 @@ public extension MBProgressHUD {
     ///   - iconNeme: 图片名
     ///   - duration: 时间 默认2s
     ///   - toView:   要显示在那个View 上
-    public static func showMessage(message: String , iconNeme: String? = nil , duration: TimeInterval? = nil , toView: UIView? = nil, mode: MBProgressHUDMode? = nil) {
+    static func showMessage(message: String , iconNeme: String? = nil , duration: TimeInterval? = nil , toView: UIView? = nil, mode: MBProgressHUDMode? = nil) {
         
         var blockView = toView
         if blockView == nil {
@@ -70,7 +70,7 @@ public extension MBProgressHUD {
     
     // MARK: - ====== Loading ======
     /// 加载视图（转菊花）
-    public static func showLoading(message: String? = nil , toView: UIView? = nil) {
+    static func showLoading(message: String? = nil , toView: UIView? = nil) {
         var blockView = toView
         if blockView == nil {
             blockView = UIApplication.shared.delegate?.window!
@@ -111,7 +111,7 @@ public extension MBProgressHUD {
     /// - parameter animated:           hud show with animation  default = true
     ///
     /// - returns: nil
-    public static func showGif(to view: UIView? = nil, userInterface:Bool = true, animated:Bool = true) {
+    static func showGif(to view: UIView? = nil, userInterface:Bool = true, animated:Bool = true) {
         var blockView = view
         if blockView == nil {
             blockView = UIApplication.shared.delegate?.window!
@@ -142,7 +142,7 @@ public extension MBProgressHUD {
     /// 隐藏hideHUD
     ///
     /// - Parameter parentView: parentView
-    public static func hideHUD(parentView: UIView? = nil) {
+    static func hideHUD(parentView: UIView? = nil) {
         var blockView = parentView
         if blockView == nil {
             blockView = UIApplication.shared.delegate?.window!
@@ -153,7 +153,7 @@ public extension MBProgressHUD {
     }
     
     /// 隐藏hideHUD
-    public static func hideHUD() {
+    static func hideHUD() {
         MBProgressHUD.hideHUD(parentView: nil)
     }
     

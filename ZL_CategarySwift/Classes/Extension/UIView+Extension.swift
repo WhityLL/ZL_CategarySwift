@@ -135,7 +135,7 @@ public extension UIView {
     }
     
     /// 裁剪 view 的圆角
-    public func clipRectCorner(direction: UIRectCorner, cornerRadius: CGFloat) {
+    func clipRectCorner(direction: UIRectCorner, cornerRadius: CGFloat) {
         let cornerSize = CGSize(width: cornerRadius, height: cornerRadius)
         let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: direction, cornerRadii: cornerSize)
         let maskLayer = CAShapeLayer()
@@ -145,7 +145,7 @@ public extension UIView {
         layer.mask = maskLayer
     }
     
-    public func fixedCollectionCellSize(size: CGSize) -> CGSize {
+    func fixedCollectionCellSize(size: CGSize) -> CGSize {
         let scale: CGFloat = UIScreen.main.scale
         return CGSize.init(width: round(scale * size.width) / scale, height: round(scale * size.height) / scale)
     }
@@ -155,14 +155,14 @@ public extension UIView {
 public protocol StoryboardLoadable {}
 public extension StoryboardLoadable where Self: UIViewController {
     /// 提供 加载方法
-    public static func loadStoryboard() -> Self {
+    static func loadStoryboard() -> Self {
         return UIStoryboard(name: "\(self)", bundle: nil).instantiateViewController(withIdentifier: "\(self)") as! Self
     }
 }
 
 public protocol NibLoadable {}
 public extension NibLoadable {
-    public static func loadViewFromNib() -> Self {
+    static func loadViewFromNib() -> Self {
         return Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.last as! Self
     }
 }
@@ -177,31 +177,31 @@ public extension RegisterCellFromNib {
 
 public extension UITableView {
     /// 注册 cell 的方法
-    public func zl_registerCell<T: UITableViewCell>(cell: T.Type) where T: RegisterCellFromNib {
+    func zl_registerCell<T: UITableViewCell>(cell: T.Type) where T: RegisterCellFromNib {
         if let nib = T.nib { register(nib, forCellReuseIdentifier: T.identifier) }
         else { register(cell, forCellReuseIdentifier: T.identifier) }
     }
     
     /// 从缓存池池出队已经存在的 cell
-    public func zl_dequeueReusableCell<T: UITableViewCell>(indexPath: IndexPath) -> T where T: RegisterCellFromNib {
+    func zl_dequeueReusableCell<T: UITableViewCell>(indexPath: IndexPath) -> T where T: RegisterCellFromNib {
         return dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as! T
     }
 }
 
 public extension UICollectionView {
     /// 注册 cell 的方法
-    public func zl_registerCell<T: UICollectionViewCell>(cell: T.Type) where T: RegisterCellFromNib {
+    func zl_registerCell<T: UICollectionViewCell>(cell: T.Type) where T: RegisterCellFromNib {
         if let nib = T.nib { register(nib, forCellWithReuseIdentifier: T.identifier) }
         else { register(cell, forCellWithReuseIdentifier: T.identifier) }
     }
     
     /// 从缓存池池出队已经存在的 cell
-    public func zl_dequeueReusableCell<T: UICollectionViewCell>(indexPath: IndexPath) -> T where T: RegisterCellFromNib {
+    func zl_dequeueReusableCell<T: UICollectionViewCell>(indexPath: IndexPath) -> T where T: RegisterCellFromNib {
         return dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as! T
     }
     
     /// 注册头部
-    public func zl_registerSupplementaryHeaderView<T: UICollectionReusableView>(reusableView: T.Type) where T: RegisterCellFromNib {
+    func zl_registerSupplementaryHeaderView<T: UICollectionReusableView>(reusableView: T.Type) where T: RegisterCellFromNib {
         // T 遵守了 RegisterCellOrNib 协议，所以通过 T 就能取出 identifier 这个属性
         if let nib = T.nib {
             register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.identifier)
@@ -211,7 +211,7 @@ public extension UICollectionView {
     }
     
     /// 获取可重用的头部
-    public func zl_dequeueReusableSupplementaryHeaderView<T: UICollectionReusableView>(indexPath: IndexPath) -> T where T: RegisterCellFromNib {
+    func zl_dequeueReusableSupplementaryHeaderView<T: UICollectionReusableView>(indexPath: IndexPath) -> T where T: RegisterCellFromNib {
         return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.identifier, for: indexPath) as! T
     }
 }

@@ -39,7 +39,7 @@ public extension UIButton {
     ///   - zl_BtnlayoutType: 按钮样式
     ///   - zl_padding_inset: 按钮上下左右的间距
     ///   - space: 图片文字的间距 (可选参数)
-    public func setBtn(zl_BtnlayoutType : ZL_ButtonLayoutType , zl_padding_inset : CGFloat , space : CGFloat? = nil) {
+    func setBtn(zl_BtnlayoutType : ZL_ButtonLayoutType , zl_padding_inset : CGFloat , space : CGFloat? = nil) {
         let imageSize = self.imageRect(forContentRect: self.frame)
         let titleStr = self.titleLabel?.text ?? ""
         let titleFont = self.titleLabel?.font!

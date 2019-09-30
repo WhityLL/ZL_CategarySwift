@@ -12,7 +12,7 @@ import UIKit
 public extension NSString{
     
     /// 获取字符串size
-    public class func getNormalStrSize(str: String? = nil, attriStr: NSMutableAttributedString? = nil, font: CGFloat, w: CGFloat, h: CGFloat) -> CGSize {
+    class func getNormalStrSize(str: String? = nil, attriStr: NSMutableAttributedString? = nil, font: CGFloat, w: CGFloat, h: CGFloat) -> CGSize {
         if str != nil {
             let strSize = (str! as NSString).boundingRect(with: CGSize(width: w, height: h), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: font)], context: nil).size
             return strSize
@@ -33,7 +33,7 @@ public extension NSString{
     ///   - font: 字体大小
     ///   - h: 限制高度
     /// - Returns: CGFloat
-    public class func getNormalStrWidth(str: String? = nil, attriStr: NSMutableAttributedString? = nil, font: CGFloat, h: CGFloat) -> CGFloat {
+    class func getNormalStrWidth(str: String? = nil, attriStr: NSMutableAttributedString? = nil, font: CGFloat, h: CGFloat) -> CGFloat {
         return NSString.getNormalStrSize(str: str, attriStr: attriStr, font: font, w: CGFloat(MAXFLOAT), h: h).width
     }
     
@@ -45,7 +45,7 @@ public extension NSString{
     ///   - font: 字体大小
     ///   - w: 限制宽度
     /// - Returns: CGFloat
-    public class func getNormalStrHeight(str: String? = nil, attriStr: NSMutableAttributedString? = nil, font: CGFloat, w: CGFloat) -> CGFloat {
+    class func getNormalStrHeight(str: String? = nil, attriStr: NSMutableAttributedString? = nil, font: CGFloat, w: CGFloat) -> CGFloat {
         return NSString.getNormalStrSize(str: str, attriStr: attriStr, font: font, w: w, h: CGFloat(MAXFLOAT)).height
     }
     
