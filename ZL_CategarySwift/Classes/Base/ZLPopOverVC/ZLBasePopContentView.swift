@@ -8,14 +8,14 @@
 
 import UIKit
 
-public class ZLBasePopContentView: UIView {
+open class ZLBasePopContentView: UIView {
 
-    override init(frame: CGRect) {
+    override open init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required open init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

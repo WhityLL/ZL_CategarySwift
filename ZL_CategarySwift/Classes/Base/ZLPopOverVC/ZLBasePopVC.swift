@@ -10,13 +10,13 @@ import UIKit
 
 open class ZLBasePopVC: UIViewController {
 
-    var backgroundViewTapClosure : (() -> ())?
-    var touchBackgroundClose : Bool = false
-    var animationDuration = 0.01
-    var presentAnimationModelConfig : ZLAnimationConfig?
-    var dismissAnimationModelConfig : ZLAnimationConfig?
+    public var backgroundViewTapClosure : (() -> ())?
+    public var touchBackgroundClose : Bool = false
+    public var animationDuration = 0.01
+    public var presentAnimationModelConfig : ZLAnimationConfig?
+    public var dismissAnimationModelConfig : ZLAnimationConfig?
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -28,7 +28,7 @@ open class ZLBasePopVC: UIViewController {
 
     }
     
-    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch : UITouch = (touches as NSSet).anyObject() as! UITouch
         let touchView = touch.view
         if touchView?.tag == 100012 && touchBackgroundClose == true {
