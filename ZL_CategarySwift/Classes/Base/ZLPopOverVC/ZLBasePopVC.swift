@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ZLBasePopVC: UIViewController {
+open class ZLBasePopVC: UIViewController {
 
     var backgroundViewTapClosure : (() -> ())?
     var touchBackgroundClose : Bool = false
