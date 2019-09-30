@@ -30,7 +30,7 @@ public class PhotoKitManager: NSObject {
     /// - Parameter needCrop: 是否需要裁剪
     /// - Parameter resultBlock: 返回 UIImage
     convenience init(parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) {
-        super.init()
+        self.init()
         self.parentVC = parentVC
         self.resultBlock = resultBlock
         self.needCrop = needCrop
