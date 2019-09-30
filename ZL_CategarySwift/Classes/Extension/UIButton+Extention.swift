@@ -22,7 +22,7 @@ public extension UIButton {
      - ZL_ButtonLayoutTypeRightImageLeft: 内容居右-图左文右
      - ZL_ButtonLayoutTypeRightImageRight: 内容居右-图右文左
      */
-    public enum ZL_ButtonLayoutType : Int {
+    enum ZL_ButtonLayoutType : Int {
         case ZL_ButtonLayoutTypeNormal
         case ZL_ButtonLayoutTypeCenterImageRight
         case ZL_ButtonLayoutTypeCenterImageTop
