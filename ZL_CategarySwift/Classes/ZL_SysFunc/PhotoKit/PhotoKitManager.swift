@@ -11,12 +11,12 @@ import TZImagePickerController
 
 public typealias PhotoKitClosure = (_ img: UIImage) -> ()
 
-open class PhotoKitManager: NSObject {
+public class PhotoKitManager: NSObject {
     private var parentVC: UIViewController?
     public var resultBlock: PhotoKitClosure?
     public var needCrop: Bool = false
     
-    lazy var imagePiker: UIImagePickerController = {
+    lazy public var imagePiker: UIImagePickerController = {
         let imagePiker: UIImagePickerController  = UIImagePickerController()
         imagePiker.delegate = self
         imagePiker.allowsEditing = true
@@ -29,7 +29,7 @@ open class PhotoKitManager: NSObject {
     /// - Parameter parentVC: parentVC
     /// - Parameter needCrop: 是否需要裁剪
     /// - Parameter resultBlock: 返回 UIImage
-    public init(parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) {
+    convenience init(parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) {
         super.init()
         self.parentVC = parentVC
         self.resultBlock = resultBlock
