@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-extension UIImageView {
+public extension UIImageView {
     
     /// 设置图片圆角
-    func circleImage() {
+    public func circleImage() {
         /// 建立上下文
         UIGraphicsBeginImageContextWithOptions(self.frame.size, false, 0)
         /// 获取当前上下文

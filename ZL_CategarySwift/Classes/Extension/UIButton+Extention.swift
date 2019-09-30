@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIButton {
+public extension UIButton {
     /**
      button 的样式，以图片为基准
      
@@ -22,7 +22,7 @@ extension UIButton {
      - ZL_ButtonLayoutTypeRightImageLeft: 内容居右-图左文右
      - ZL_ButtonLayoutTypeRightImageRight: 内容居右-图右文左
      */
-    enum ZL_ButtonLayoutType : Int {
+    public enum ZL_ButtonLayoutType : Int {
         case ZL_ButtonLayoutTypeNormal
         case ZL_ButtonLayoutTypeCenterImageRight
         case ZL_ButtonLayoutTypeCenterImageTop
@@ -39,7 +39,7 @@ extension UIButton {
     ///   - zl_BtnlayoutType: 按钮样式
     ///   - zl_padding_inset: 按钮上下左右的间距
     ///   - space: 图片文字的间距 (可选参数)
-    func setBtn(zl_BtnlayoutType : ZL_ButtonLayoutType , zl_padding_inset : CGFloat , space : CGFloat? = nil) {
+    public func setBtn(zl_BtnlayoutType : ZL_ButtonLayoutType , zl_padding_inset : CGFloat , space : CGFloat? = nil) {
         let imageSize = self.imageRect(forContentRect: self.frame)
         let titleStr = self.titleLabel?.text ?? ""
         let titleFont = self.titleLabel?.font!

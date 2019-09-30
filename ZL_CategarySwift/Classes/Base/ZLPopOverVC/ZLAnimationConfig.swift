@@ -8,13 +8,13 @@
 
 import UIKit
 
-enum ZLAnimationModelType : Int{
+public enum ZLAnimationModelType : Int{
     case ZLAnimationModelTypeNone = 0
     case ZLAnimationModelTypePresent = 1
     case ZLAnimationModelTypeDismiss = 2
 }
 
-class ZLAnimationConfig: NSObject {
+public class ZLAnimationConfig: NSObject {
     /// 动画时长
     var _animationDuration : CGFloat = 0.35
     /// 背景视图高度

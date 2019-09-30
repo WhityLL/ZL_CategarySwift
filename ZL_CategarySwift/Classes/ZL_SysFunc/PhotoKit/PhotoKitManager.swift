@@ -11,7 +11,7 @@ import TZImagePickerController
 
 typealias PhotoKitClosure = (_ img: UIImage) -> ()
 
-class PhotoKitManager: NSObject {
+public class PhotoKitManager: NSObject {
     private var parentVC: UIViewController?
     var resultBlock: PhotoKitClosure?
     var needCrop: Bool = false
@@ -29,7 +29,7 @@ class PhotoKitManager: NSObject {
     /// - Parameter parentVC: parentVC
     /// - Parameter needCrop: 是否需要裁剪
     /// - Parameter resultBlock: 返回 UIImage
-    init(parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) {
+    public init(parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) {
         super.init()
         self.parentVC = parentVC
         self.resultBlock = resultBlock

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZLAnimationModel: NSObject {
+public class ZLAnimationModel: NSObject {
 
     /// 动画时长
     var duration : CGFloat = 0.01
@@ -23,7 +23,7 @@ class ZLAnimationModel: NSObject {
         super.init()
     }
     
-    class func animationModelWithAnimationConfig(config : ZLAnimationConfig) -> ZLAnimationModel {
+    public class func animationModelWithAnimationConfig(config : ZLAnimationConfig) -> ZLAnimationModel {
         
         let model : ZLAnimationModel = ZLAnimationModel.init()
     

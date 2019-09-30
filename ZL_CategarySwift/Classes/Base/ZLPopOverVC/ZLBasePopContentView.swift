@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZLBasePopContentView: UIView {
+public class ZLBasePopContentView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

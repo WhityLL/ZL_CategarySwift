@@ -20,8 +20,8 @@ import CoreLocation
 typealias LocationResultBlock      = (_ loc: CLPlacemark?, _ errorMsg: String?) -> ()
 typealias LocationPointResultBlock = (_ loc: CLLocation?, _ errorMsg: String?) -> ()
 
-class LocationUtil: NSObject {
-    static let share = LocationUtil()
+public class LocationUtil: NSObject {
+    public static let share = LocationUtil()
     
     /// 是否只获取一次
     var isOnce: Bool = false
@@ -40,7 +40,7 @@ class LocationUtil: NSObject {
     }()
     
     /// 获取位置信息
-    func getCurrentLocation(isOnce: Bool,resultBlock: @escaping LocationResultBlock) -> () {
+    public func getCurrentLocation(isOnce: Bool,resultBlock: @escaping LocationResultBlock) -> () {
         self.isOnce = isOnce
         self.resultBlock = resultBlock
         
@@ -49,7 +49,7 @@ class LocationUtil: NSObject {
     }
     
     /// 仅获取经纬度
-    func getCurrentPointLocation(isOnce: Bool,resultPointBlock: @escaping LocationPointResultBlock) -> () {
+    public func getCurrentPointLocation(isOnce: Bool,resultPointBlock: @escaping LocationPointResultBlock) -> () {
         self.isOnce = isOnce
         self.resultPointBlock = resultPointBlock
         

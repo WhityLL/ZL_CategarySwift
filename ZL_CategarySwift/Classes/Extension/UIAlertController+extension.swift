@@ -8,9 +8,9 @@
 
 import UIKit
 //对UIAlertController进行扩展((UIAlertAction) -> Void)? = nil
-extension UIAlertController{
+public extension UIAlertController{
     //创建样式
-    static func showAlert(title: String? = nil,
+    public static func showAlert(title: String? = nil,
                           messgae:String? = nil,
                           in viewController: UIViewController? = nil,
                           confirmTitle: String? = nil ,

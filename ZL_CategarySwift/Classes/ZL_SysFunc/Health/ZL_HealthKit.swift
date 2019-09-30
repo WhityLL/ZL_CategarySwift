@@ -12,7 +12,7 @@ import UIKit
 
 typealias Health_StepClosure = (_ stepList: [Double]? , Error?) -> ()
 
-class ZL_HealthKit: NSObject {
+public class ZL_HealthKit: NSObject {
     
     private enum HealthkitSetupError: Error {
         case notAvailableOnDevice
@@ -25,7 +25,7 @@ class ZL_HealthKit: NSObject {
     var endDate: Date?
     
     /// 获取30天步数数据
-    public func getUserSteps(resultBlock: @escaping Health_StepClosure) {
+    public public func getUserSteps(resultBlock: @escaping Health_StepClosure) {
         self.resultBlock = resultBlock
         
         AuthorizeUtils.zl_authorizeHealthKit { (authorized) in

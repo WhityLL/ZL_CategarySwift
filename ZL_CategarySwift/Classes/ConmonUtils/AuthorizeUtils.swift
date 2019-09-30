@@ -16,10 +16,10 @@ import AVFoundation
 import HealthKit
 import Contacts
 
-struct AuthorizeUtils {
+public struct AuthorizeUtils {
     
     /** 校验是否有相机权限 */
-    static func zl_checkCamera(completion: @escaping (_ granted: Bool) -> Void) {
+    public static func zl_checkCamera(completion: @escaping (_ granted: Bool) -> Void) {
         let videoAuthStatus = AVCaptureDevice.authorizationStatus(for: .video)
         
         switch videoAuthStatus {
@@ -41,7 +41,7 @@ struct AuthorizeUtils {
     }
     
     /** 校验是否有相册权限 */
-    static func zl_checkAlbum(completion: @escaping (_ granted: Bool) -> Void) {
+    public static func zl_checkAlbum(completion: @escaping (_ granted: Bool) -> Void) {
         let photoAuthStatus = PHPhotoLibrary.authorizationStatus()
         
         switch photoAuthStatus {
@@ -62,7 +62,7 @@ struct AuthorizeUtils {
     }
     
     /** 校验是否有相册权限 */
-    static func zl_checkLocation(completion: @escaping (_ granted: Bool) -> Void) {
+    public static func zl_checkLocation(completion: @escaping (_ granted: Bool) -> Void) {
         if CLLocationManager.locationServicesEnabled() && CLLocationManager.authorizationStatus() != .denied {
             completion(true)
         }else{
@@ -71,7 +71,7 @@ struct AuthorizeUtils {
         }
     }
     
-    static func zl_authorizeHealthKit(completion: @escaping (_ granted: Bool) -> Void) {
+    public static func zl_authorizeHealthKit(completion: @escaping (_ granted: Bool) -> Void) {
         
         //1. Check to see if HealthKit Is Available on this device
         guard HKHealthStore.isHealthDataAvailable() else {
@@ -96,7 +96,7 @@ struct AuthorizeUtils {
     
     
     /** 校验是否有通讯录权限 */
-    static func zl_authorizeContact(completion: @escaping (_ granted: Bool) -> Void) {
+    public static func zl_authorizeContact(completion: @escaping (_ granted: Bool) -> Void) {
         let status = CNContactStore.authorizationStatus(for: .contacts)
         
         switch status {

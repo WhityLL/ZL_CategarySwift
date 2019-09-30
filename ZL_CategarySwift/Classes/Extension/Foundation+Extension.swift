@@ -8,16 +8,16 @@
 
 import UIKit
 
-extension String {
+public extension String {
     /// 计算文本的高度
-    func textHeight(fontSize: CGFloat, width: CGFloat) -> CGFloat {
+   public func textHeight(fontSize: CGFloat, width: CGFloat) -> CGFloat {
         return self.boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [.font: UIFont.systemFont(ofSize: fontSize)], context: nil).size.height
     }
 }
 
-extension TimeInterval {
+public extension TimeInterval {
     // 把秒数转换成时间的字符串
-    func convertString() -> String {
+    public func convertString() -> String {
         // 把获取到的秒数转换成具体的时间
         let createDate = Date(timeIntervalSince1970: self)
         // 获取当前日历
@@ -53,7 +53,7 @@ extension TimeInterval {
 
 extension Int {
     
-    func convertString() -> String {
+    public func convertString() -> String {
         guard self >= 10000 else {
             return String(describing: self)
         }
@@ -61,7 +61,7 @@ extension Int {
     }
     
     /// 将秒数转成字符串
-    func convertVideoDuration() -> String {
+    public func convertVideoDuration() -> String {
         // 格式化时间
         if self == 0 { return "00:00" }
         let hour = self / 3600
@@ -76,7 +76,7 @@ extension Int {
 extension Date {
     
     /// 判断当前日期是否为今年
-    func isThisYear() -> Bool {
+    public func isThisYear() -> Bool {
         // 获取当前日历
         let calender = Calendar.current
         // 获取日期的年份
@@ -88,7 +88,7 @@ extension Date {
     }
     
     /// 是否是昨天
-    func isYesterday() -> Bool {
+    public func isYesterday() -> Bool {
         // 获取当前日历
         let calender = Calendar.current
         // 获取日期的年份
@@ -100,7 +100,7 @@ extension Date {
     }
     
     /// 是否是前天
-    func isBeforeYesterday() -> Bool {
+    public func isBeforeYesterday() -> Bool {
         // 获取当前日历
         let calender = Calendar.current
         // 获取日期的年份
@@ -111,7 +111,7 @@ extension Date {
     }
     
     /// 判断是否是今天
-    func isToday() -> Bool {
+    public func isToday() -> Bool {
         // 日期格式化
         let formatter = DateFormatter()
         // 设置日期格式

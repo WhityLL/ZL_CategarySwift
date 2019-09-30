@@ -11,75 +11,75 @@ import UIKit
 
 // MARK: ========= DeviceInfo ==========
 /// 屏幕的宽
-let SCREEN_WIDTH = UIScreen.main.bounds.size.width
+public let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 /// 屏幕的高
-let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+public let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 
 /// iPhone4
-let isIphone4 = SCREEN_HEIGHT  < 568 ? true : false
+public let isIphone4 = SCREEN_HEIGHT  < 568 ? true : false
 /// iPhone 5
-let isIphone5 = SCREEN_HEIGHT  == 568 ? true : false
+public let isIphone5 = SCREEN_HEIGHT  == 568 ? true : false
 /// iPhone 6
-let isIphone6 = SCREEN_HEIGHT  == 667 ? true : false
+public let isIphone6 = SCREEN_HEIGHT  == 667 ? true : false
 /// iphone 6P
-let isIphone6P = SCREEN_HEIGHT == 736 ? true : false
+public let isIphone6P = SCREEN_HEIGHT == 736 ? true : false
 /// iphone X_XS
-let isIphoneX_XS = SCREEN_HEIGHT == 812 ? true : false
+public let isIphoneX_XS = SCREEN_HEIGHT == 812 ? true : false
 /// iphone XR_XSMax
-let isIphoneXR_XSMax = SCREEN_HEIGHT == 896 ? true : false
+public let isIphoneXR_XSMax = SCREEN_HEIGHT == 896 ? true : false
 /// 全面屏
-let isFullScreen = (isIphoneX_XS || isIphoneXR_XSMax)
+public let isFullScreen = (isIphoneX_XS || isIphoneXR_XSMax)
 
-let kStatusBarHeight : CGFloat = isFullScreen ? 44 : 20
-let kNavigationBarHeight : CGFloat =  44
-let kStatusBarAndNavigationBarHeight : CGFloat = isFullScreen ? 88 : 64
-let kBottomSafeMargin : CGFloat = isFullScreen ? 34 : 0
-let kTabbarHeight : CGFloat = isFullScreen ? 49 + 34 : 49
+public let kStatusBarHeight : CGFloat = isFullScreen ? 44 : 20
+public let kNavigationBarHeight : CGFloat =  44
+public let kStatusBarAndNavigationBarHeight : CGFloat = isFullScreen ? 88 : 64
+public let kBottomSafeMargin : CGFloat = isFullScreen ? 34 : 0
+public let kTabbarHeight : CGFloat = isFullScreen ? 49 + 34 : 49
 
 // MARK: ========= 屏幕适配 ==========
-let  kScaleX : Float = Float(SCREEN_WIDTH / 375.0)
-let  kScaleY : Float = Float(SCREEN_HEIGHT / 667.0)
+public let  kScaleX : Float = Float(SCREEN_WIDTH / 375.0)
+public let  kScaleY : Float = Float(SCREEN_HEIGHT / 667.0)
 
 ///适配后的宽度
-func AdaptedWidth(w : Float) -> Float {
+public func AdaptedWidth(w : Float) -> Float {
     return ceilf(w * kScaleX)
 }
 ///适配后的高度
-func AdaptedHeight(h : Float) -> Float {
+public func AdaptedHeight(h : Float) -> Float {
     return ceilf(h * kScaleY)
 }
 
 // MARK: ========= app信息 ==========
-struct AppInfo {
+public struct AppInfo {
     
-    static let infoDictionary = Bundle.main.infoDictionary
+    public static let infoDictionary = Bundle.main.infoDictionary
     
     /// App 名称
-    static let appDisplayName: String = Bundle.main.infoDictionary!["CFBundleDisplayName"] as! String
+    public static let appDisplayName: String = Bundle.main.infoDictionary!["CFBundleDisplayName"] as! String
     
     /// Bundle Identifier
-    static let bundleIdentifier:String = Bundle.main.bundleIdentifier!
+    public static let bundleIdentifier:String = Bundle.main.bundleIdentifier!
     
     /// App 版本号
-    static let appVersion:String = Bundle.main.infoDictionary! ["CFBundleShortVersionString"] as! String
+    public static let appVersion:String = Bundle.main.infoDictionary! ["CFBundleShortVersionString"] as! String
     
     /// Bulid 版本号
-    static let buildVersion : String = Bundle.main.infoDictionary! ["CFBundleVersion"] as! String
+    public static let buildVersion : String = Bundle.main.infoDictionary! ["CFBundleVersion"] as! String
     
     /// iOS系统 版本
-    static let iOSVersion:String = UIDevice.current.systemVersion
+    public static let iOSVersion:String = UIDevice.current.systemVersion
     
     /// 设备 udid
-    static let identifierNumber = UIDevice.current.identifierForVendor
+    public static let identifierNumber = UIDevice.current.identifierForVendor
     
     /// 系统名称  e.g. @"iOS"
-    static let systemName = UIDevice.current.systemName
+    public static let systemName = UIDevice.current.systemName
     
     /// 设备名称 e.g. @"iPhone", @"iPod touch"
-    static let model = UIDevice.current.model
+    public static let model = UIDevice.current.model
     
     /// 设备区域化型号
-    static let localizedModel = UIDevice.current.localizedModel
+    public static let localizedModel = UIDevice.current.localizedModel
 }
 
 let CurrentLanguage = NSLocale.preferredLanguages[0]

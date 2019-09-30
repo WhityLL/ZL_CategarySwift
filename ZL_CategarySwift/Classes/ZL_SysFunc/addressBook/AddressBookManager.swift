@@ -11,13 +11,13 @@ import Contacts
 
 typealias addressBookListBlock = (_ list: Array<Any>) -> ()
 
-class AddressBookManager: NSObject {
-    static let shared = AddressBookManager()
+public class AddressBookManager: NSObject {
+    public static let shared = AddressBookManager()
     
     var addressBookListBlock: addressBookListBlock?
     
     /// 获取通讯录数据
-    func getAddressBookList(completedBlock: @escaping addressBookListBlock) -> () {
+    public func getAddressBookList(completedBlock: @escaping addressBookListBlock) -> () {
         self.addressBookListBlock = completedBlock
         AuthorizeUtils.zl_authorizeContact { (granted) in
             if granted {

@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 /// RGBA的颜色设置
-func RGBAColor(r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
+public func RGBAColor(r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
     return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
 }
 
 /// 随机色
-func ZLRandomColor() -> UIColor{
+public func ZLRandomColor() -> UIColor{
     let red = CGFloat(arc4random_uniform(255))/CGFloat(255.0)
     let green = CGFloat( arc4random_uniform(255))/CGFloat(255.0)
     let blue = CGFloat(arc4random_uniform(255))/CGFloat(255.0)
@@ -25,7 +25,7 @@ func ZLRandomColor() -> UIColor{
 /**
  *  16进制 转 RGB
  */
-func HexColor(rgb:Int) -> UIColor {
+public func HexColor(rgb:Int) -> UIColor {
     return UIColor(red: ((CGFloat)((rgb & 0xFF0000) >> 16)) / 255.0,
                    green: ((CGFloat)((rgb & 0xFF00) >> 8)) / 255.0,
                    blue: ((CGFloat)(rgb & 0xFF)) / 255.0,
@@ -33,7 +33,7 @@ func HexColor(rgb:Int) -> UIColor {
 }
 
 ///由角度转换弧度 (M_PI * (x) / 180.0)
-func DegreesToRadian(degree : Double) -> Double {
+public func DegreesToRadian(degree : Double) -> Double {
     return Double.pi * degree / 180.0
 }
 

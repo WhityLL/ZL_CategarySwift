@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-extension UIImage {
+public extension UIImage {
     
-    static func from(color: UIColor) -> UIImage {
+    public static func from(color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
@@ -88,7 +88,7 @@ extension UIImage {
     ///   - image: compressImage
     ///   - maxLength: maxLength
     /// - Returns: return image
-    static func compressImageQuality(_ image: UIImage, toByte maxLength: Int) -> UIImage {
+    resizeImage static func compressImageQuality(_ image: UIImage, toByte maxLength: Int) -> UIImage {
         var compression: CGFloat = 1
         guard var data = image.jpegData(compressionQuality: compression),
             data.count > maxLength else { return image }
