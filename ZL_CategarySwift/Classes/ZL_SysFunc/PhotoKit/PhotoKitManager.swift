@@ -12,6 +12,8 @@ import TZImagePickerController
 public typealias PhotoKitClosure = (_ img: UIImage) -> ()
 
 public class PhotoKitManager: NSObject {
+    public static let shared = PhotoKitManager()
+    
     private var parentVC: UIViewController?
     public var resultBlock: PhotoKitClosure?
     public var needCrop: Bool = false
@@ -29,8 +31,7 @@ public class PhotoKitManager: NSObject {
     /// - Parameter parentVC: parentVC
     /// - Parameter needCrop: 是否需要裁剪
     /// - Parameter resultBlock: 返回 UIImage
-    convenience init(parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) {
-        self.init()
+    public func zl_chooseImg(from parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) {
         self.parentVC = parentVC
         self.resultBlock = resultBlock
         self.needCrop = needCrop

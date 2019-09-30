@@ -52,34 +52,34 @@ public func AdaptedHeight(h : Float) -> Float {
 // MARK: ========= app信息 ==========
 public struct AppInfo {
     
-    static let infoDictionary = Bundle.main.infoDictionary
+    public static let infoDictionary = Bundle.main.infoDictionary
     
     /// App 名称
-    static let appDisplayName: String = Bundle.main.infoDictionary!["CFBundleDisplayName"] as! String
+    public static let appDisplayName: String = Bundle.main.infoDictionary!["CFBundleDisplayName"] as! String
     
     /// Bundle Identifier
-    static let bundleIdentifier:String = Bundle.main.bundleIdentifier!
+    public static let bundleIdentifier:String = Bundle.main.bundleIdentifier!
     
     /// App 版本号
-    static let appVersion:String = Bundle.main.infoDictionary! ["CFBundleShortVersionString"] as! String
+    public static let appVersion:String = Bundle.main.infoDictionary! ["CFBundleShortVersionString"] as! String
     
     /// Bulid 版本号
-    static let buildVersion : String = Bundle.main.infoDictionary! ["CFBundleVersion"] as! String
+    public static let buildVersion : String = Bundle.main.infoDictionary! ["CFBundleVersion"] as! String
     
     /// iOS系统 版本
-    static let iOSVersion:String = UIDevice.current.systemVersion
+    public static let iOSVersion:String = UIDevice.current.systemVersion
     
     /// 设备 udid
-    static let identifierNumber = UIDevice.current.identifierForVendor
+    public static let identifierNumber = UIDevice.current.identifierForVendor
     
     /// 系统名称  e.g. @"iOS"
-    static let systemName = UIDevice.current.systemName
+    public static let systemName = UIDevice.current.systemName
     
     /// 设备名称 e.g. @"iPhone", @"iPod touch"
-    static let model = UIDevice.current.model
+    public static let model = UIDevice.current.model
     
     /// 设备区域化型号
-    static let localizedModel = UIDevice.current.localizedModel
+    public static let localizedModel = UIDevice.current.localizedModel
 }
 
 public let CurrentLanguage = NSLocale.preferredLanguages[0]
