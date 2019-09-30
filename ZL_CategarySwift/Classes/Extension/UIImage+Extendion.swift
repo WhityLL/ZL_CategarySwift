@@ -88,7 +88,7 @@ public extension UIImage {
     ///   - image: compressImage
     ///   - maxLength: maxLength
     /// - Returns: return image
-    resizeImage static func compressImageQuality(_ image: UIImage, toByte maxLength: Int) -> UIImage {
+    public static func compressImageQuality(_ image: UIImage, toByte maxLength: Int) -> UIImage {
         var compression: CGFloat = 1
         guard var data = image.jpegData(compressionQuality: compression),
             data.count > maxLength else { return image }

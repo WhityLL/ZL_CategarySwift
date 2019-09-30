@@ -177,7 +177,7 @@ public extension RegisterCellFromNib {
 
 public extension UITableView {
     /// 注册 cell 的方法
-    public public func zl_registerCell<T: UITableViewCell>(cell: T.Type) where T: RegisterCellFromNib {
+    public func zl_registerCell<T: UITableViewCell>(cell: T.Type) where T: RegisterCellFromNib {
         if let nib = T.nib { register(nib, forCellReuseIdentifier: T.identifier) }
         else { register(cell, forCellReuseIdentifier: T.identifier) }
     }

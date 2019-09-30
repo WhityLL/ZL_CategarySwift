@@ -9,7 +9,7 @@
 import UIKit
 import TZImagePickerController
 
-typealias PhotoKitClosure = (_ img: UIImage) -> ()
+public typealias PhotoKitClosure = (_ img: UIImage) -> ()
 
 public class PhotoKitManager: NSObject {
     private var parentVC: UIViewController?

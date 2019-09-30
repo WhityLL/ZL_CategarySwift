@@ -46,7 +46,7 @@ public class ZLBasePopVC: UIViewController {
 // MARK: ========= UIViewControllerTransitioningDelegate ==========
 extension ZLBasePopVC : UIViewControllerTransitioningDelegate{
     
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let config : ZLAnimationConfig?
         if self.presentAnimationModelConfig != nil {
             config = self.presentAnimationModelConfig
@@ -60,7 +60,7 @@ extension ZLBasePopVC : UIViewControllerTransitioningDelegate{
         return ZLAnimationModel.animationModelWithAnimationConfig(config: config!)
     }
     
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let config : ZLAnimationConfig?
         if self.dismissAnimationModelConfig != nil {
             config = self.dismissAnimationModelConfig

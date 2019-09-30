@@ -9,7 +9,7 @@
 import UIKit
 import Contacts
 
-typealias addressBookListBlock = (_ list: Array<Any>) -> ()
+public typealias addressBookListBlock = (_ list: Array<Any>) -> ()
 
 public class AddressBookManager: NSObject {
     public static let shared = AddressBookManager()

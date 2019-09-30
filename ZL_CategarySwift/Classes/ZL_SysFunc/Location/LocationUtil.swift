@@ -17,8 +17,8 @@
 import Foundation
 import CoreLocation
 
-typealias LocationResultBlock      = (_ loc: CLPlacemark?, _ errorMsg: String?) -> ()
-typealias LocationPointResultBlock = (_ loc: CLLocation?, _ errorMsg: String?) -> ()
+public typealias LocationResultBlock      = (_ loc: CLPlacemark?, _ errorMsg: String?) -> ()
+public typealias LocationPointResultBlock = (_ loc: CLLocation?, _ errorMsg: String?) -> ()
 
 public class LocationUtil: NSObject {
     public static let share = LocationUtil()
@@ -88,7 +88,7 @@ public class LocationUtil: NSObject {
 extension LocationUtil: CLLocationManagerDelegate {
     
     // 成功delegete
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         guard let loc = locations.last else {
             if resultBlock != nil {
@@ -121,7 +121,7 @@ extension LocationUtil: CLLocationManagerDelegate {
     }
     
     // 失败delegate
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
     }
     

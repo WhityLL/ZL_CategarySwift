@@ -45,11 +45,11 @@ public class ZLAnimationModel: NSObject {
 }
 
 extension ZLAnimationModel : UIViewControllerAnimatedTransitioning{
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return TimeInterval(duration)
     }
     
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         if modelType == .ZLAnimationModelTypePresent {
             present(transitionContext: transitionContext)
         }else{
@@ -57,7 +57,7 @@ extension ZLAnimationModel : UIViewControllerAnimatedTransitioning{
         }
     }
     
-    func dismiss(transitionContext : UIViewControllerContextTransitioning) {
+    public func dismiss(transitionContext : UIViewControllerContextTransitioning) {
      
         let fromView : UIView = transitionContext.view(forKey: .from)!
         let containerView : UIView = transitionContext.containerView
