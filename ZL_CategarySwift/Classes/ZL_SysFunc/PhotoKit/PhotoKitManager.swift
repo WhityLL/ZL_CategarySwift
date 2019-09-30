@@ -29,7 +29,7 @@ open class PhotoKitManager: NSObject {
     /// - Parameter parentVC: parentVC
     /// - Parameter needCrop: 是否需要裁剪
     /// - Parameter resultBlock: 返回 UIImage
-    public init(parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) {
+    open init(parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) {
         super.init()
         self.parentVC = parentVC
         self.resultBlock = resultBlock
