@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIView {
+@objc public extension UIView {
 
     /// x
     var x: CGFloat {
@@ -134,22 +134,52 @@ public extension UIView {
         }
     }
     
-    /// 裁剪 view 的圆角
-    func clipRectCorner(direction: UIRectCorner, cornerRadius: CGFloat) {
-        let cornerSize = CGSize(width: cornerRadius, height: cornerRadius)
-        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: direction, cornerRadii: cornerSize)
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = bounds
-        maskLayer.path = maskPath.cgPath
-        layer.addSublayer(maskLayer)
-        layer.mask = maskLayer
+}
+
+public extension UIView {
+    
+    /// 移除所有子视图
+    func removeAllSubviews() {
+        for view in self.subviews {
+            view.removeFromSuperview()
+        }
     }
     
-    func fixedCollectionCellSize(size: CGSize) -> CGSize {
-        let scale: CGFloat = UIScreen.main.scale
-        return CGSize.init(width: round(scale * size.width) / scale, height: round(scale * size.height) / scale)
+    /// 圆角设置
+    func setCornerRadius(_ cornerRadius: CGFloat, masksToBounds: Bool = true) {
+        self.layer.cornerRadius = cornerRadius
+        self.layer.masksToBounds = masksToBounds
     }
+    
+    /// 圆角设置
+    func setCornerRadius(_ cornerRadius: CGFloat, byRoundingCorners corners: UIRectCorner) {
+        let maskPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        let maskLayer = CAShapeLayer(layer: self.layer)
+        maskLayer.path = maskPath.cgPath
+        self.layer.mask = maskLayer
+    }
+    
+    /// 边框设置
+    func setBorder(color: UIColor, width: CGFloat) {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = width
+    }
+    
+    /// 投影设置
+    /// - parameter color: 颜色
+    /// - parameter offset: 偏移
+    /// - parameter radius: 模糊半径
+    /// - parameter opacity: 不透明度
+    func setShadow(color: UIColor, offset: CGSize, radius: CGFloat, opacity: Float) {
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOffset = offset
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+    }
+    
 }
+
 
 
 public protocol StoryboardLoadable {}

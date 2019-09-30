@@ -16,7 +16,7 @@ public class ZLBasePopVC: UIViewController {
     var presentAnimationModelConfig : ZLAnimationConfig?
     var dismissAnimationModelConfig : ZLAnimationConfig?
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -28,7 +28,7 @@ public class ZLBasePopVC: UIViewController {
 
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch : UITouch = (touches as NSSet).anyObject() as! UITouch
         let touchView = touch.view
         if touchView?.tag == 100012 && touchBackgroundClose == true {
@@ -36,7 +36,7 @@ public class ZLBasePopVC: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

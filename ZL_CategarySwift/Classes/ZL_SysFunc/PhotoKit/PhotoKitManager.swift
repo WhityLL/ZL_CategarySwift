@@ -81,11 +81,11 @@ public class PhotoKitManager: NSObject {
 }
 
 extension PhotoKitManager: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.parentVC?.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if imagePiker.allowsEditing{
             // 获取选择或者拍摄的照片
@@ -102,11 +102,11 @@ extension PhotoKitManager: UIImagePickerControllerDelegate, UINavigationControll
 }
 
 extension PhotoKitManager: TZImagePickerControllerDelegate{
-    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingGifImage animatedImage: UIImage!, sourceAssets asset: PHAsset!) {
+    public func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingGifImage animatedImage: UIImage!, sourceAssets asset: PHAsset!) {
            
        }
        
-    func tz_imagePickerControllerDidCancel(_ picker: TZImagePickerController!) {
+    public func tz_imagePickerControllerDidCancel(_ picker: TZImagePickerController!) {
            
     }
 }
