@@ -12,6 +12,7 @@ import TZImagePickerController
 public typealias PhotoKitClosure = (_ img: UIImage) -> ()
 
 public class PhotoKitManager: NSObject {
+    
     public static let shared = PhotoKitManager()
     
     private var parentVC: UIViewController?
@@ -31,7 +32,7 @@ public class PhotoKitManager: NSObject {
     /// - Parameter parentVC: parentVC
     /// - Parameter needCrop: 是否需要裁剪
     /// - Parameter resultBlock: 返回 UIImage
-    public func zl_chooseImg(from parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) {
+    public func zl_getPhoto(from parentVC :UIViewController , needCrop: Bool , resultBlock: @escaping PhotoKitClosure) -> PhotoKitManager{
         self.parentVC = parentVC
         self.resultBlock = resultBlock
         self.needCrop = needCrop
@@ -45,6 +46,8 @@ public class PhotoKitManager: NSObject {
         }))
         alertSheet.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: nil))
         parentVC.present(alertSheet, animated: true, completion: nil)
+        
+        return self
     }
     
     func assetChoose() {
