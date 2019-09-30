@@ -38,26 +38,26 @@ public func DegreesToRadian(degree : Double) -> Double {
 }
 
 ///由弧度转换角度  (radian * 180.0) / (M_PI)
-func RadianToDegrees(radian : Double) -> Double {
+public func RadianToDegrees(radian : Double) -> Double {
     return radian * 180.0 / Double.pi
 }
 
 // MARK: ========= 字体适配 ==========
 ///适配后的普通字体(系统)
-func AdaptedSystomFont(size : Float) -> UIFont {
+public func AdaptedSystomFont(size : Float) -> UIFont {
     return UIFont.systemFont(ofSize: CGFloat(AdaptedWidth(w: size)))
 }
 ///适配后的粗字体(系统)
-func AdaptedSystomBlodFont(size : Float) -> UIFont {
+public func AdaptedSystomBlodFont(size : Float) -> UIFont {
     return UIFont.boldSystemFont(ofSize: CGFloat(AdaptedWidth(w: size)))
 }
 
 ///字体名
-let  CHINESE_FONT_NAME : String = "PingFangSC-Light"
-let  CHINESE_BLODFONT_NAME : String = "PingFangSC-Regular"
+public let  CHINESE_FONT_NAME : String = "PingFangSC-Light"
+public let  CHINESE_BLODFONT_NAME : String = "PingFangSC-Regular"
 
 ///适配后的普通字体
-func AdaptedCustomFont(size : Float) -> UIFont {
+public func AdaptedCustomFont(size : Float) -> UIFont {
     if let font = UIFont.init(name: CHINESE_FONT_NAME, size: CGFloat(AdaptedWidth(w: size))) {
         return font
     }
@@ -66,7 +66,7 @@ func AdaptedCustomFont(size : Float) -> UIFont {
 }
 
 ///适配后的粗字体
-func AdaptedCustomBlodFont(size : Float) -> UIFont {
+public func AdaptedCustomBlodFont(size : Float) -> UIFont {
     if let font = UIFont.init(name: CHINESE_BLODFONT_NAME, size: CGFloat(AdaptedWidth(w: size))) {
         return font
     }
@@ -75,7 +75,7 @@ func AdaptedCustomBlodFont(size : Float) -> UIFont {
 
 // MARK: ========= GlobleFunc ==========
 ///自定义打印
-func MYLog<T>(_ message: T)
+public func MYLog<T>(_ message: T)
 {
     #if DEBUG
     print("==\(#line)== \(message)");

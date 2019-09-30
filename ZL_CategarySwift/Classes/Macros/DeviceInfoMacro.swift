@@ -52,40 +52,40 @@ public func AdaptedHeight(h : Float) -> Float {
 // MARK: ========= app信息 ==========
 public struct AppInfo {
     
-    public static let infoDictionary = Bundle.main.infoDictionary
+    static let infoDictionary = Bundle.main.infoDictionary
     
     /// App 名称
-    public static let appDisplayName: String = Bundle.main.infoDictionary!["CFBundleDisplayName"] as! String
+    static let appDisplayName: String = Bundle.main.infoDictionary!["CFBundleDisplayName"] as! String
     
     /// Bundle Identifier
-    public static let bundleIdentifier:String = Bundle.main.bundleIdentifier!
+    static let bundleIdentifier:String = Bundle.main.bundleIdentifier!
     
     /// App 版本号
-    public static let appVersion:String = Bundle.main.infoDictionary! ["CFBundleShortVersionString"] as! String
+    static let appVersion:String = Bundle.main.infoDictionary! ["CFBundleShortVersionString"] as! String
     
     /// Bulid 版本号
-    public static let buildVersion : String = Bundle.main.infoDictionary! ["CFBundleVersion"] as! String
+    static let buildVersion : String = Bundle.main.infoDictionary! ["CFBundleVersion"] as! String
     
     /// iOS系统 版本
-    public static let iOSVersion:String = UIDevice.current.systemVersion
+    static let iOSVersion:String = UIDevice.current.systemVersion
     
     /// 设备 udid
-    public static let identifierNumber = UIDevice.current.identifierForVendor
+    static let identifierNumber = UIDevice.current.identifierForVendor
     
     /// 系统名称  e.g. @"iOS"
-    public static let systemName = UIDevice.current.systemName
+    static let systemName = UIDevice.current.systemName
     
     /// 设备名称 e.g. @"iPhone", @"iPod touch"
-    public static let model = UIDevice.current.model
+    static let model = UIDevice.current.model
     
     /// 设备区域化型号
-    public static let localizedModel = UIDevice.current.localizedModel
+    static let localizedModel = UIDevice.current.localizedModel
 }
 
-let CurrentLanguage = NSLocale.preferredLanguages[0]
+public let CurrentLanguage = NSLocale.preferredLanguages[0]
 
 /// 获取启动图
-func getProjectLaunchImage() -> UIImage? {
+public func getProjectLaunchImage() -> UIImage? {
     let viewSize = UIScreen.main.bounds.size
     var viewOrientation: String = ""
     if UIApplication.shared.statusBarOrientation == .portraitUpsideDown || UIApplication.shared.statusBarOrientation == .portrait {

@@ -11,10 +11,10 @@ import TZImagePickerController
 
 public typealias PhotoKitClosure = (_ img: UIImage) -> ()
 
-public class PhotoKitManager: NSObject {
+open class PhotoKitManager: NSObject {
     private var parentVC: UIViewController?
-    var resultBlock: PhotoKitClosure?
-    var needCrop: Bool = false
+    public var resultBlock: PhotoKitClosure?
+    public var needCrop: Bool = false
     
     lazy var imagePiker: UIImagePickerController = {
         let imagePiker: UIImagePickerController  = UIImagePickerController()

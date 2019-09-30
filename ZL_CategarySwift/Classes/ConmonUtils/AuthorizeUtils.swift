@@ -71,6 +71,7 @@ public struct AuthorizeUtils {
         }
     }
     
+    /** 校验是否有健康数据权限 */
     public static func zl_authorizeHealthKit(completion: @escaping (_ granted: Bool) -> Void) {
         
         //1. Check to see if HealthKit Is Available on this device
