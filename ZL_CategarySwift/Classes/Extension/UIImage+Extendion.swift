@@ -55,7 +55,7 @@ public extension UIImage {
     
     /// UIView 转 UIImage
     static func image(with view: UIView) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(view.frameSize, false, 0)
+        UIGraphicsBeginImageContextWithOptions(view.size, false, 0)
         guard let context = UIGraphicsGetCurrentContext() else {
             UIGraphicsEndImageContext()
             return nil
@@ -71,7 +71,7 @@ public extension UIImage {
     /// - parameter rect: 矩形框
     /// - parameter corner: 是否圆角
     static func image(with view: UIView, rect: CGRect, corner: Bool = false) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(view.frameSize, true, 0)
+        UIGraphicsBeginImageContextWithOptions(view.size, true, 0)
         guard let context = UIGraphicsGetCurrentContext() else {
             UIGraphicsEndImageContext()
             return nil
