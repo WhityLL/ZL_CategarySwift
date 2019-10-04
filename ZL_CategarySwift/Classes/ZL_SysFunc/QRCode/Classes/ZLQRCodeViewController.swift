@@ -153,9 +153,9 @@ extension ZLQRCodeViewController {
 }
 
 // MARK: - 扫描结果处理
-public extension ZLQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
+extension ZLQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
     
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
         if metadataObjects.count > 0 {
             _pauseScanning()
@@ -170,9 +170,9 @@ public extension ZLQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate 
 }
 
 // MARK: - 监听光线亮度
-public extension ZLQRCodeViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension ZLQRCodeViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let metadataDict = CMCopyDictionaryOfAttachments(allocator: nil, target: sampleBuffer, attachmentMode: kCMAttachmentMode_ShouldPropagate)
         
         if let metadata = metadataDict as? [AnyHashable: Any] {
@@ -195,9 +195,9 @@ public extension ZLQRCodeViewController: AVCaptureVideoDataOutputSampleBufferDel
 }
 
 // MARK: - 识别选择图片Delegate
-public extension ZLQRCodeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ZLQRCodeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true) {
             if !self.handlePickInfo(info) {
                 self.zl_didReadFromAlbumFailed()
@@ -205,7 +205,7 @@ public extension ZLQRCodeViewController: UIImagePickerControllerDelegate, UINavi
         }
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true) {
             self.zl_didReadFromAlbumFailed()
         }
