@@ -11,6 +11,15 @@ import UIKit
 
 public extension UIImage {
     
+    static func zl_getImageFromBunble(imageBundle: Bundle, imgName: String) -> UIImage{
+        var name = imgName + "@2x"
+        guard let imagePath = imageBundle.path(forResource: name, ofType: "png") else {
+            name = name.replacingOccurrences(of: "@2x", with: "")
+            return UIImage.init(named: name)!
+        }
+        return UIImage.init(contentsOfFile: imagePath)!
+    }
+    
     static func from(color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
