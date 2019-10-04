@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import MBProgressHUD
 
 public class ZLQRCodeViewController: UIViewController {
     
@@ -16,7 +17,7 @@ public class ZLQRCodeViewController: UIViewController {
     var config = ZLQRCodeCompat()
     private let session = AVCaptureSession()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = ZLQRCodeHelper.zl_navigationItemTitle(type: self.config.scannerType)
@@ -28,12 +29,12 @@ public class ZLQRCodeViewController: UIViewController {
         _setupUI();
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         _resumeScanning()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // 关闭并隐藏手电筒
@@ -127,7 +128,7 @@ public class ZLQRCodeViewController: UIViewController {
         return tempScannerView
     }()
     
-    override func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
@@ -152,7 +153,7 @@ extension ZLQRCodeViewController {
 }
 
 // MARK: - 扫描结果处理
-extension ZLQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
+public extension ZLQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
@@ -169,7 +170,7 @@ extension ZLQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
 }
 
 // MARK: - 监听光线亮度
-extension ZLQRCodeViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+public extension ZLQRCodeViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let metadataDict = CMCopyDictionaryOfAttachments(allocator: nil, target: sampleBuffer, attachmentMode: kCMAttachmentMode_ShouldPropagate)
@@ -194,7 +195,7 @@ extension ZLQRCodeViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 }
 
 // MARK: - 识别选择图片Delegate
-extension ZLQRCodeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+public extension ZLQRCodeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true) {
