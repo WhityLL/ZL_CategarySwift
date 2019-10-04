@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.32"
+    s.version      = "0.0.33"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
                         常用的swift分类
@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
            ss.dependency 'ZL_CategarySwift/ConmonUtils'
            ss.dependency 'ZL_CategarySwift/Extension'
            ss.dependency 'ZL_CategarySwift/Macros'
-           ss.resources = "ZL_CategarySwift/Classes/ZL_SysFunc/QRCode/SWQRCode.bundle"
+           ss.resources = "ZL_CategarySwift/Classes/ZL_SysFunc/QRCode/QRCode.bundle"
         end
     end
     
