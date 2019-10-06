@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.36"
+    s.version      = "0.0.37"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
                         常用的swift分类
@@ -32,7 +32,9 @@ Pod::Spec.new do |s|
 
     # ——— File patterns
     # s.source_files  = "ZL_CategarySwift/Classes/**/*"
-
+    
+    # 是否包含静态库框架（注意：不能写在subspec子模块中）
+    s.static_framework = true
 
     #  Macros
     s.subspec 'Macros' do |macros|
@@ -98,8 +100,7 @@ Pod::Spec.new do |s|
            ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/PayUtil/*"
            ss.dependency 'ZL_CategarySwift/Extension'
            ss.dependency "AlipaySDK-iOS"
-           ss.dependency "UMCShare/Social/WeChat"
-           # ss.dependency "WechatOpenSDK"
+           ss.dependency "WechatOpenSDK"
         end
     end
     
