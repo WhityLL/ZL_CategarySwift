@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AlipaySDK
 
 public class AliPayManager: NSObject{
     public static let shared = AliPayManager()
