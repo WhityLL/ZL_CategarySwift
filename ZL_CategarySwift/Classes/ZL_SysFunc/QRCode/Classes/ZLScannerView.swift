@@ -114,7 +114,12 @@ class ZLScannerView: UIView {
     /** 扫描线条 */
     private lazy var scannerLine: UIImageView = {
         let tempScannerLine = UIImageView(frame: CGRect(x: scanner_x, y: scanner_y, width: scanner_width, height: scanner_lineHeight))
-        tempScannerLine.image = UIImage(named: "QRCode.bundle/ScannerLine@2x")
+  
+        let path = Bundle.init(for: Self.self).path(forResource: "QRCode", ofType: "bundle")
+        let bundle = Bundle.init(path: path!)
+        let image = UIImage.init(named: "ScannerLine", in: bundle, compatibleWith: nil)
+        
+        tempScannerLine.image = image
         return tempScannerLine
     }()
     
@@ -135,8 +140,15 @@ class ZLScannerView: UIView {
         tempFlashlightBtn.isEnabled = false
         tempFlashlightBtn.alpha = 0
         tempFlashlightBtn.addTarget(self, action: #selector(flashlightClicked), for: .touchUpInside)
-        tempFlashlightBtn.setBackgroundImage(UIImage(named: "QRCode.bundle/Flashlight_Off@2x"), for: .normal)
-        tempFlashlightBtn.setBackgroundImage(UIImage(named: "QRCode.bundle/Flashlight_On@2x"), for: .selected)
+        
+        let path = Bundle.init(for: Self.self).path(forResource: "QRCode", ofType: "bundle")
+        let bundle = Bundle.init(path: path!)
+        let imageOff = UIImage.init(named: "Flashlight_Off", in: bundle, compatibleWith: nil)
+        let imageOn = UIImage.init(named: "Flashlight_On", in: bundle, compatibleWith: nil)
+        
+        tempFlashlightBtn.setBackgroundImage(imageOff, for: .normal)
+        tempFlashlightBtn.setBackgroundImage(imageOn, for: .selected)
+    
         return tempFlashlightBtn
     }()
     
