@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import WXApi
+import WXApiObject
 
 //微信appid
 let WX_APPID = ""
