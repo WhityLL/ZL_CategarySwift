@@ -83,30 +83,3 @@ public struct AppInfo {
 }
 
 public let CurrentLanguage = NSLocale.preferredLanguages[0]
-
-/// 获取启动图
-public func getProjectLaunchImage() -> UIImage? {
-    let viewSize = UIScreen.main.bounds.size
-    var viewOrientation: String = ""
-    if UIApplication.shared.statusBarOrientation == .portraitUpsideDown || UIApplication.shared.statusBarOrientation == .portrait {
-        viewOrientation = "Portrait"
-    } else {
-        viewOrientation = "Landscape"
-    }
-    
-
-    guard let tmpLaunchImages = Bundle.main.infoDictionary!["UILaunchImages"] as? [Any]  else {
-        return nil
-    }
-
-    var launchImageName = ""
-    for dict in tmpLaunchImages {
-        if let someDict = dict as? [String: Any] {
-            let imageSize = NSCoder.cgSize(for: someDict["UILaunchImageSize"] as! String)
-            if __CGSizeEqualToSize(viewSize, imageSize) && viewOrientation == someDict["UILaunchImageOrientation"] as! String {
-                launchImageName = someDict["UILaunchImageName"] as! String
-            }
-        }
-    }
-    return UIImage(named: launchImageName)!
-}

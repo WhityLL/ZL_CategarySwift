@@ -72,12 +72,3 @@ public func AdaptedCustomBlodFont(size : Float) -> UIFont {
     }
     return UIFont.boldSystemFont(ofSize: CGFloat(size))
 }
-
-// MARK: ========= GlobleFunc ==========
-///自定义打印
-public func MYLog<T>(_ message: T)
-{
-    #if DEBUG
-    print("==\(#line)== \(message)");
-    #endif
-}

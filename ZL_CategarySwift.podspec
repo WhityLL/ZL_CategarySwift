@@ -9,10 +9,10 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.39"
+    s.version      = "0.0.40"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
-                        常用的swift分类
+                        常用的swift 方法 分类 功能封装
                         ZL_CategarySwift
                    DESC
     s.homepage     = "https://github.com/WhityLL/ZL_CategarySwift"
@@ -41,14 +41,14 @@ Pod::Spec.new do |s|
         macros.source_files = "ZL_CategarySwift/Classes/Macros/*"
     end
 
-    #  Extension
+    #  Extension （常用的扩展）
     s.subspec 'Extension' do |extension|
         extension.source_files = "ZL_CategarySwift/Classes/Extension/*"
         extension.dependency "MBProgressHUD"
         extension.dependency "Kingfisher", "~>4.10.1"
     end
     
-    #  ConmonUtils
+    #  ConmonUtils （授权、正则）
     # 并且要添加依赖（注意写法）'ZL_CategarySwift/Extension'
     s.subspec 'ConmonUtils' do |conmonUtils|
         conmonUtils.source_files = "ZL_CategarySwift/Classes/ConmonUtils/*"
@@ -56,13 +56,6 @@ Pod::Spec.new do |s|
         conmonUtils.framework = 'CoreTelephony'
     end
     
-    #  Base
-    s.subspec 'Base' do |base|
-        base.subspec 'ZLPopOverVC' do |ss|
-           ss.source_files = "ZL_CategarySwift/Classes/Base/ZLPopOverVC/*"
-           ss.dependency 'ZL_CategarySwift/Macros'
-        end
-    end
     
     #  ZL_SysFunc
     s.subspec 'ZL_SysFunc' do |funcs|
@@ -96,12 +89,6 @@ Pod::Spec.new do |s|
            ss.resources = "ZL_CategarySwift/Classes/ZL_SysFunc/QRCode/QRCode.bundle"
         end
         
-        funcs.subspec 'PayUtil' do |ss|
-           ss.source_files = "ZL_CategarySwift/Classes/ZL_SysFunc/PayUtil/*"
-           ss.dependency 'ZL_CategarySwift/Extension'
-           ss.dependency "AlipaySDK-iOS"
-           ss.dependency "WechatOpenSDK"
-        end
     end
     
     s.framework = 'QuartzCore', 'CoreText'  , 'CoreGraphics', 'UIKit', 'Foundation', 'CFNetwork', 'CoreMotion'
