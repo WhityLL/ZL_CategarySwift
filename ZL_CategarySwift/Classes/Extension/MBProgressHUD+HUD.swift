@@ -34,7 +34,8 @@ public extension MBProgressHUD {
         
         DispatchQueue.main.async {
             // 1、隐藏以前的
-            MBProgressHUD.hideAllHUDs(for: blockView!, animated: false)
+            MBProgressHUD.hide(for: blockView!, animated: false)
+            
             // 2、显示
             let hud: MBProgressHUD = MBProgressHUD.showAdded(to: blockView!, animated: true)
             if iconNeme == nil {
@@ -60,7 +61,6 @@ public extension MBProgressHUD {
             
             if(mode != nil){
                 hud.mode = mode!
-                hud.activityIndicatorColor = UIColor.white
                 hud.minSize = CGSize.init(width: 100, height: 100)
                 hud.label.textColor = UIColor.white
             }
@@ -78,7 +78,7 @@ public extension MBProgressHUD {
         
         DispatchQueue.main.async {
             // 1、隐藏以前的
-            MBProgressHUD.hideAllHUDs(for: blockView!, animated: false)
+            MBProgressHUD.hide(for: blockView!, animated: false)
             // 2、显示
             let hud: MBProgressHUD = MBProgressHUD.showAdded(to: blockView!, animated: true)
             hud.mode = .indeterminate
@@ -88,7 +88,6 @@ public extension MBProgressHUD {
             hud.backgroundView.backgroundColor = UIColor.black
             hud.bezelView.style = .solidColor;
             hud.bezelView.backgroundColor = UIColor.init(white: 0, alpha: 0.7)
-            hud.activityIndicatorColor = UIColor.white
             
             if message != nil {
                 hud.label.text = message
@@ -119,7 +118,7 @@ public extension MBProgressHUD {
         
         DispatchQueue.main.async {
             // 1、隐藏以前的
-            MBProgressHUD.hideAllHUDs(for: blockView!, animated: false)
+            MBProgressHUD.hide(for: blockView!, animated: false)
             // 2、显示
             //如果是gif可以使用sdwebImage的方法加载本地gif
             //let image = UIImage.sd_animatedGIFNamed("loading")
