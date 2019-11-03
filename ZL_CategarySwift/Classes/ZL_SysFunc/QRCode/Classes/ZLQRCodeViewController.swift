@@ -107,11 +107,11 @@ public class ZLQRCodeViewController: UIViewController {
     
     // MARK: - 跳转相册
     private func imagePicker() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        imagePicker.modalPresentationStyle = .fullScreen
-        OperationQueue.main.addOperation({ 
+        OperationQueue.main.addOperation({
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self
+            imagePicker.modalPresentationStyle = .fullScreen
             self.present(imagePicker, animated: true, completion: nil)
         })
     }
