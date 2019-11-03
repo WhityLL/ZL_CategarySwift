@@ -110,7 +110,10 @@ public class ZLQRCodeViewController: UIViewController {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
+        imagePicker.modalPresentationStyle = .fullScreen
+        OperationQueue.main.addOperation({ 
+            self.present(imagePicker, animated: true, completion: nil)
+        })
     }
     
     /// 从后台进入前台

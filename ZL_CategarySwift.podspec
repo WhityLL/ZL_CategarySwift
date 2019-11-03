@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "ZL_CategarySwift"
-    s.version      = "0.0.40"
+    s.version      = "0.0.41"
     s.summary      = "ZL_CategarySwift"
     s.description  = <<-DESC
                         常用的swift 方法 分类 功能封装

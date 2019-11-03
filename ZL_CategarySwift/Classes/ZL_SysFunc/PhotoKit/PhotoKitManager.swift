@@ -66,7 +66,10 @@ public class PhotoKitManager: NSObject {
                 self.resultBlock?(image)
             }
         }
-        self.parentVC?.present(vc, animated: true, completion: nil)
+        vc.modalPresentationStyle = .fullScreen
+        OperationQueue.main.addOperation({ // 不加这一句 在iOS11 crash
+            self.parentVC?.present(vc, animated: true, completion: nil)
+        })
     }
     
     func takePhoto() {
